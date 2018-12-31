@@ -1,0 +1,70 @@
+#多环境配置可以在一个文件实现，也可以通过多个文件实现
+#单文件借助 --- , spring.profiles: prod / dev 区分
+#多文件借助 application-dev.yml application-prod.yml 区分
+#spring:
+#  profiles:
+#    active: dev
+
+#通用配置 common
+#server:
+#  port: 8761
+#
+#eureka:
+#  instance:                       #此Eureka服务实例
+#    hostname: localhost                   #重定义域名为localhost
+#    #prefer-ip-address: true              #使用IP地址代替hostname
+#    #status-page-url-path: /info           #http://localhost:8761/actuator/health (默认URL)
+#    #health-check-url-path: /health
+#  client:                         #此Eureka服务作为客户端的配置
+#    register-with-eureka: false           #不注册到defaultZone指定的Eureka服务器（这里指自己）
+#    fetch-registry: false                 #
+#    service-url:
+#      #注意Eureka注册中心的URL为 http://${eureka.instance.hostname}:${server.port}/
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#  server:                         #此Eureka服务作为服务端的配置
+#    eviction-interval-timer-in-ms: 5000   #清理间隔（单位毫秒，默认是60*1000），开发环境设置如下可快速移除不可用的服务
+#    enable-self-preservation: false       #Eureka服务端关闭心跳连接测试
+#management:
+#  context-path: /
+
+---
+spring:
+  profiles: EurekaServer1
+  application:
+    name: EurekaServer1
+
+server:
+  port: 8761
+
+eureka:
+  #  instance:                       #此Eureka服务实例 TODO：为什么 Eureka Server hostname 相同时，从另一个Eureka Server同步注册微服务会失败？
+  #    hostname: localhost
+  client:                         #此Eureka服务作为客户端的配置
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
+  server:                         #此Eureka服务作为服务端的配置
+    eviction-interval-timer-in-ms: 5000
+    enable-self-preservation: false
+
+---
+spring:
+  profiles: EurekaServer2
+  application:
+    name: EurekaServer2
+
+server:
+  port: 8762
+
+eureka:
+  #  instance:                       #此Eureka服务实例
+  #    hostname: localhost
+  client:                         #此Eureka服务作为客户端的配置
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  server:                         #此Eureka服务作为服务端的配置
+    eviction-interval-timer-in-ms: 5000
+    enable-self-preservation: false

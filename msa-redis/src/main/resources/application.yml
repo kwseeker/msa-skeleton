@@ -1,0 +1,16 @@
+server:
+  port: 9010
+
+spring:
+  application:
+    name: msa-redis     #对应Eureka注册中心UI Application
+
+#TODO: 研究这些参数是怎么解析的，以及还有哪些配置参数以及功能（EurekaInstanceConfigBean, EurekaClientConfigBean）
+eureka:
+  instance:
+    #hostname: msa-redis-server    #指此 Eureka 客户端的hostname（即微服务的主机域名）, http://msa-redis-server:9010/actuator/info
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    #enabled: false           #不想将这个微服务注册到Eureka注册中心的话添加此字段

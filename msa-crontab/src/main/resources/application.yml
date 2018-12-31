@@ -1,0 +1,14 @@
+server:
+  port: 9011
+
+spring:
+  application:
+    name: msa-crontab
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    #enabled: false           #不想将这个微服务注册到Eureka注册中心的话添加此字段
