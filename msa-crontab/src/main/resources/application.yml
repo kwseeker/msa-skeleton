@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: msa-crontab
+  datasource:
+    url: jdbc:mysql://localhost:3306/quartz_demo?useSSL=false
+    username: root
+    password: 112358flzt9t
 
 eureka:
   instance:

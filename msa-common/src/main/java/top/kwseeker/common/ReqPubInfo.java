@@ -5,13 +5,14 @@ import java.util.Map;
 /**
  * 公共请求参数
  */
-public class RequestPubInfo {
+public class ReqPubInfo {
     //请求来源
     private String reqSrc;
     //请求时间
     private String reqTime;
     //拓展参数
     private Map<String, Object> extPubInfo;
+
 
     public String getReqSrc() {
         return reqSrc;
