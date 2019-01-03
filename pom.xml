@@ -15,9 +15,10 @@
     <description>Micro service architecture skeleton</description>
 
     <modules>
-        <module>mss-common</module>
         <module>msa-eureka</module>
         <module>msa-common</module>
+        <module>msa-crontab</module>
+        <module>msa-test</module>
     </modules>
 
     <properties>

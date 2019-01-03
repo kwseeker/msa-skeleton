@@ -7,10 +7,10 @@
         <artifactId>msa-skeleton</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>msa-crontab</artifactId>
+    <artifactId>msa-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>msa-crontab</name>
-    <description>Crontab micro service</description>
+    <name>msa-test</name>
+    <description>Test module for micro service</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -21,30 +21,6 @@
             <groupId>top.kwseeker</groupId>
             <artifactId>msa-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <!-- Quartz -->
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-            <version>2.3.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz-jobs</artifactId>
-            <version>2.3.0</version>
-        </dependency>
-        <!-- OkHttp -->
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>3.12.0</version>
-        </dependency>
-        <!-- guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>19.0</version>
         </dependency>
 
         <dependency>
@@ -58,6 +34,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 
