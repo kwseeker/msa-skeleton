@@ -12,6 +12,7 @@ public class ResEntity<T> {
     private T busiInfo;
     private Map<String, Object> extRepParam;
 
+    public ResEntity() {}
 
     public ResEntity(ResPubInfo resPubInfo) {
         this.pubInfo = resPubInfo;

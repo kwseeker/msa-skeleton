@@ -8,10 +8,15 @@ import top.kwseeker.common.ReqEntity;
 import top.kwseeker.common.ResEntity;
 import top.kwseeker.common.ResPubInfo;
 import top.kwseeker.common.constant.ResCode;
+import top.kwseeker.common.entity.crontab.TriggerBase;
 import top.kwseeker.msacrontab.entity.JobDetailEntity;
+import top.kwseeker.msacrontab.entity.JobEntity;
+import top.kwseeker.msacrontab.entity.TriggerEntity;
 import top.kwseeker.msacrontab.service.IQuartzJobDetailService;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Quartz 定时任务 Controller
@@ -32,6 +37,18 @@ public class QuartzJobController {
     public ResEntity<Boolean> addJob(@RequestBody ReqEntity<JobDetailEntity> reqEntity) {
         logger.info("执行 QuartzJobController addJob ---> begin, param=" + reqEntity.toString());
         JobDetailEntity jobDetailEntity = reqEntity.getBusiInfo();
+
+        //类型替换
+        //TODO: 这段代码有点丑
+        JobEntity jobEntity = new JobEntity(jobDetailEntity.getJobBase());
+        jobDetailEntity.setJobBase(jobEntity);
+        Set<TriggerBase> triggerBaseSet = jobDetailEntity.getTriggerBaseSet();
+        Set<TriggerBase> triggerEntitySet = new HashSet<>();
+        for(TriggerBase triggerBase : triggerBaseSet) {
+            triggerEntitySet.add(new TriggerEntity(triggerBase));
+        }
+        jobDetailEntity.setTriggerBaseSet(triggerEntitySet);
+
         boolean result = quartzJobDetailService.addJob(jobDetailEntity);
         if(result) {
             logger.info("执行 QuartzJobController addJob ---> end");

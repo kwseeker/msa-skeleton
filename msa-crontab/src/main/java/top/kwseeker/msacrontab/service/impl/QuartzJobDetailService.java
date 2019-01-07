@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import top.kwseeker.common.constant.ModuleTag;
 import top.kwseeker.msacrontab.entity.JobDetailEntity;
+import top.kwseeker.msacrontab.entity.JobEntity;
+import top.kwseeker.msacrontab.entity.TriggerEntity;
 import top.kwseeker.msacrontab.service.IQuartzJobDetailService;
 
 import java.util.List;
@@ -31,9 +33,9 @@ public class QuartzJobDetailService implements IQuartzJobDetailService {
      */
     @Override
     public boolean addJob(JobDetailEntity jobDetailEntity) {
-        JobDetail jobDetail = jobDetailEntity.getJobEntity().convertToQuartzJobDetail();
-        Set<CronTrigger> triggerSet = jobDetailEntity.getTriggerEntitySet().stream().map(jtd ->
-                jtd.convertToQuartzTrigger(jobDetail)
+        JobDetail jobDetail = ((JobEntity)jobDetailEntity.getJobBase()).convertToQuartzJobDetail();
+        Set<CronTrigger> triggerSet = jobDetailEntity.getTriggerBaseSet().stream().map(jtd ->
+                ((TriggerEntity)jtd).convertToQuartzTrigger(jobDetail)
         ).collect(Collectors.toSet());
 
         try {
@@ -74,7 +76,7 @@ public class QuartzJobDetailService implements IQuartzJobDetailService {
         List<JobDetailEntity> jobDetailEntities = Lists.newArrayList();
 
         //使用函数式编程的方式定义一个函数，通过JobKey获取对应的JobDetailEntity
-        //输入 Set<JobKey> 返回 List<JobDetailEntity>
+        //输入 Set<JobKey> 返回 List<JobDetailBase>
         Function<Set<JobKey>, List<JobDetailEntity>> copyPropFun = jobKeys -> {
             List<JobDetailEntity> jobDetailEntityList = Lists.newArrayList();
             jobDetailEntityList = jobKeys.stream().map(jobKey -> {

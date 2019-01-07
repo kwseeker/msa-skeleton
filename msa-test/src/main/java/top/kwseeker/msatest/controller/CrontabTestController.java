@@ -7,7 +7,10 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import top.kwseeker.msatest.client.MsaCrontabClient;
+import top.kwseeker.common.ReqEntity;
+import top.kwseeker.common.ResEntity;
+import top.kwseeker.common.entity.crontab.JobDetailBase;
+import top.kwseeker.msatest.clientApi.MsaCrontabServiceApi;
 
 @RestController
 @RequestMapping("/test")
@@ -20,24 +23,31 @@ public class CrontabTestController {
     @Autowired
     private RestTemplate restTemplate;
     @Autowired
-    private MsaCrontabClient msaCrontabClient;
+    private MsaCrontabServiceApi msaCrontabServiceApi;
 
-    //TODO：复杂数据类型，怎么在微服务间传递
-//    @PostMapping("/addJob")
-//    public String addJob() {
+    // 复杂数据类型
+    // 1：将共用数据类型全都定义在msa-common模块中
+    @PostMapping("/addJob")
+    public ResEntity addJob(@RequestBody ReqEntity<JobDetailBase> reqEntity) {
+        //方法1
 //        RestTemplate restTemplate = new RestTemplate();
-//        String response = restTemplate.postForObject("http://localhost:9011/jobs/add");
-//    }
+//        Object response = restTemplate.postForObject("http://localhost:9011/jobs/add", reqEntity, ResEntity.class);
+//        return (ResEntity) response;
+
+        //方法2
+        ResEntity response = msaCrontabServiceApi.addJob(reqEntity);
+        return response;
+    }
 
     @GetMapping("/listJob/{meansId}")
-    public String listJob(@PathVariable("meansId") Integer meansId) {
-        String response = "";
+    public ResEntity listJob(@PathVariable("meansId") Integer meansId) {
+        ResEntity response = null;
         logger.info("meansId={}", meansId);
         switch (meansId) {
             case 1:
                 //方法1
                 RestTemplate restTemplate1 = new RestTemplate();
-                response = restTemplate1.getForObject("http://localhost:9011/jobs/list", String.class);
+                response = restTemplate1.getForObject("http://localhost:9011/jobs/list", ResEntity.class);
                 break;
             case 2:
                 //方法2
@@ -46,15 +56,15 @@ public class CrontabTestController {
                 RestTemplate restTemplate2 = new RestTemplate();
                 ServiceInstance serviceInstance = loadBalancerClient.choose("MSA-CRONTAB");
                 String url = String.format("http://%s:%s", serviceInstance.getHost(), serviceInstance.getPort()) + "/jobs/list";
-                response = restTemplate2.getForObject(url, String.class);
+                response = restTemplate2.getForObject(url, ResEntity.class);
                 break;
             case 3:
                 //方法3，实现和方法2是一样的
-                response = restTemplate.getForObject("http://MSA-CRONTAB/jobs/list", String.class);
+                response = restTemplate.getForObject("http://MSA-CRONTAB/jobs/list", ResEntity.class);
                 break;
             case 4:
                 //方法4，使用feign, 这种方法输出的格式也最规范（Json，其他是xml）
-                response = msaCrontabClient.listJob();
+                response = msaCrontabServiceApi.listJob();
                 break;
             default:
         }

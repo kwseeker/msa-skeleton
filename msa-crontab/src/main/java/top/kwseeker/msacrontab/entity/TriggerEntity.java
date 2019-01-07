@@ -2,6 +2,7 @@ package top.kwseeker.msacrontab.entity;
 
 import com.google.common.base.Strings;
 import org.quartz.*;
+import top.kwseeker.common.entity.crontab.TriggerBase;
 
 import java.text.ParseException;
 
@@ -10,15 +11,16 @@ import static com.google.common.base.Preconditions.checkArgument;
 /**
  * 为指定的 JobDetail 创建 CronTrigger 触发器
  */
-public class TriggerEntity {
+public class TriggerEntity extends TriggerBase {
 
-    //触发器名字
-    private String name;
-    //触发器分组，要和要触发的JobDetail同组
-    private String group;
-    //Cron表达式
-    private String cronExpression;
-    private String description;
+    public TriggerEntity() {}
+
+    public TriggerEntity(TriggerBase triggerBase) {
+        this.name = triggerBase.getName();
+        this.group = triggerBase.getGroup();
+        this.cronExpression = triggerBase.getCronExpression();
+        this.description = triggerBase.getDescription();
+    }
 
     public CronTrigger convertToQuartzTrigger(JobDetail jobDetail) {
         CronExpression ce = null;
@@ -36,46 +38,4 @@ public class TriggerEntity {
                 .build();
     }
 
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getGroup() {
-        return group;
-    }
-
-    public void setGroup(String group) {
-        this.group = group;
-    }
-
-    public String getCronExpression() {
-        return cronExpression;
-    }
-
-    public void setCronExpression(String cronExpression) {
-        this.cronExpression = cronExpression;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "TriggerEntity{" +
-                "name='" + name + '\'' +
-                ", group='" + group + '\'' +
-                ", cronExpression='" + cronExpression + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
 }

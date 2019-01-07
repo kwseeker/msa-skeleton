@@ -19,6 +19,7 @@
         <module>msa-common</module>
         <module>msa-crontab</module>
         <module>msa-test</module>
+        <module>msa-modapi</module>
     </modules>
 
     <properties>
@@ -79,6 +80,11 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.kwseeker</groupId>
+                <artifactId>msa-common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
