@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: msa-gateway
+server:
+  port: 9010
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+# 对应配置类为 ZuulProperties.java
+zuul:
+  #自定义路由(Ctrl/Command+B可以看到对应类及配置成员)
+  routes:
+    msatest:  # 随便定义
+      path: /msatest/**     # 将msa-test微服务下的所有接口映射到/msatest/下，默认是/msa-test/即微服务名称( 这里是添加映射并不会覆盖默认映射/msa-test/也是可以访问的)
+      serviceId: msa-test
+      #敏感头过滤(默认值为："Cookie", "Set-Cookie", "Authorization")
+      sensitiveHeaders:     # 设置为空则对所有header都不过滤 TODO:敏感头过滤原理
+    # 简洁写法(和上面三行作用相同)
+    # msa-test: /msatest/**
+  # 禁止路由到某些地址（ignore类配置）
+  ignored-patterns:
+    - /msa-crontab/jobs/add   # 如不能将添加定时任务的接口暴露给用户
+    - /msa-test/test/addJob
+management:
+  security:
+    enabled: false

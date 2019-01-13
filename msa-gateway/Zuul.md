@@ -1,5 +1,7 @@
 ## 服务网关 Zuul
 
+###1 网关简介
+
 #### 网关设计要素
 1）稳定高可用  
     因为网关是所有服务入口；  
@@ -21,15 +23,46 @@
 
 实际使用可以综合使用各种网关，充分发挥各自的优势。
 
+###2 Zuul简介
 Zuul = 路由 + 过滤器  
 Zuul的核心是一系列的过滤器
 定义了四种过滤器API（Pre/Route/Post/Error）
 
+Zuul的功能  
+参考：[8. Router and Filter: Zuul](https://cloud.spring.io/spring-cloud-netflix/multi/multi__router_and_filter_zuul.html)  
+Netflix uses Zuul for the following:
++ Authentication
++ Insights
++ Stress Testing
++ Canary Testing
++ Dynamic Routing
++ Service Migration
++ Load Shedding
++ Security
++ Static Response handling
++ Active/Active traffic management
+
 Zuul组件架构图  
-参考：
+参考：  
+[Zuul源码](https://github.com/Netflix/zuul)  
 [深入理解Zuul之源码解析](https://blog.csdn.net/forezp/article/details/76211680)
 ![Zuul核心架构图](https://img-blog.csdnimg.cn/20181222164555235)
 
 请求的生命周期  
-![](https://images2015.cnblogs.com/blog/1099841/201706/1099841-20170630111344414-1260445909.png)
+![请求生命周期](https://images2015.cnblogs.com/blog/1099841/201706/1099841-20170630111344414-1260445909.png)
+
+#### Zuul典型应用场景实现
+前置过滤器（Pre）：
++ 限流
++ 鉴权
++ 参数校验与修改
++ 请求转发  
+
+后置过滤器（Post）：
++ 统计（流量等）
+
+#### Zuul实现高可用
+方法1：只需要将多个Zuul节点注册到Eureka Server  
+方法2：使用Nginx和Zuul混搭  
+
 
