@@ -3,7 +3,7 @@ package top.kwseeker.msagateway.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-import org.apache.http.HttpStatus;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -72,7 +72,7 @@ public class TokenValidateFilter extends ZuulFilter {
         if(request != null && StringUtils.isEmpty(token = request.getParameter("token"))) {
             //直接返回错误码
             requestContext.setSendZuulResponse(false);
-            requestContext.setResponseStatusCode(HttpStatus.SC_UNAUTHORIZED);
+            requestContext.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
         }
 
         //其他校验逻辑 ...

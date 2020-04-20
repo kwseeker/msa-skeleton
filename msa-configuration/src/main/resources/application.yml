@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: msa-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kwseeker/config-repo.git
+          username: kwseeker
+          password: 112358flzt9t
+          basedir: /Users/lee/mywork/java/micro_service/spring_cloud/config-repo
+server:
+  port: 9020
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

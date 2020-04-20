@@ -53,10 +53,38 @@ Zuul组件架构图
 
 #### Zuul典型应用场景实现
 前置过滤器（Pre）：
-+ 限流
++ 限流  
+    防止恶意请求攻击；  
+    
+    比较实用的限流算法有漏桶算法、令牌桶算法，还有一种计数器算法不过不太实用。
+    
+    漏桶作为计量工具时，可用于流量整形和流量控制，漏桶的主要概念如下：  
+    一个固定容量的漏桶，按照常量固定速率流出水滴（流出请求）
+    如果桶是空的，则不需流出水滴
+    可以以任意速率流入水滴到漏桶（流入请求）
+    如果流入水滴超出了桶的容量，则流入的水滴溢出了（新流入的请求被拒绝），则漏桶容量是不变的
+    漏桶可以看做固定容量、固定流出速率的队列，漏桶限制的是请求的流出速率，漏桶中装的是请求。
+
+    令牌桶算法是一个存放固定容量令牌（token）的桶，按照固定速率往桶里添加令牌。令牌桶的主要概念如下：  
+    令牌按固定的速率被放入令牌桶中，例如：r tokens/秒
+    桶中最多存放b个令牌，当桶满时，新添加的令牌被丢弃或拒绝
+    当一个n字节大小的数据包到达，将从桶中删除n个令牌，接着数据包被发送到网络上
+    如果桶中的令牌不足n个，则不会删除令牌，且数据包将被限流（丢弃或在缓冲区等待）
+    令牌桶根据放令牌的速率（r tokens/s）去控制输出的速率（to network）。
+    
+    关于令牌桶限流算法可以参考下面两个开源实现：  
+    [spring-cloud-zuul-ratelimit](https://github.com/marcosbarbero/spring-cloud-zuul-ratelimit)  
+    
+    [guava/src/com/google/common/util/concurrent/RateLimiter.java](https://github.com/google/guava/blob/master/guava/src/com/google/common/util/concurrent/RateLimiter.java)   
+    Guava令牌桶限流的源码 RateLimiter.java、SmoothRateLimiter.java  
+    
+    
 + 鉴权
 + 参数校验与修改
 + 请求转发  
++ 跨域  
+    跨域问题资料参考：  
+    慕课网《Ajax跨域完全讲解》  
 
 后置过滤器（Post）：
 + 统计（流量等）

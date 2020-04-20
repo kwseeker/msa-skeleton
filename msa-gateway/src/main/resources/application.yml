@@ -9,6 +9,8 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 # 对应配置类为 ZuulProperties.java
 zuul:
+  # 敏感头全局配置（对所有微服务，所有接口有效）
+#  sensitive-headers:
   #自定义路由(Ctrl/Command+B可以看到对应类及配置成员)
   routes:
     msatest:  # 随便定义

@@ -17,4 +17,4 @@
 
 6）@ConfigurationProperties
 
-
+7）Hystrix 在哪些情况下会触发降级？
