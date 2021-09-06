@@ -1,0 +1,17 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: msa-user-web-service
+  webservices:
+    path: /web/user
+  # Nacos 注册中心地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        #namespace: 39e1e969-15f9-46d2-832d-fa052da55377
+        group: msa-web-service
+
+

@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import top.kwseeker.common.ReqEntity;
-import top.kwseeker.common.ResEntity;
-import top.kwseeker.common.ResPubInfo;
+import top.kwseeker.common.RespEntity;
+import top.kwseeker.common.RespPubInfo;
 import top.kwseeker.common.constant.ResCode;
 import top.kwseeker.common.entity.crontab.TriggerBase;
 import top.kwseeker.msacrontab.entity.JobDetailEntity;
@@ -34,7 +34,7 @@ public class QuartzJobController {
      * 添加定时任务
      */
     @PostMapping("/add")
-    public ResEntity<Boolean> addJob(@RequestBody ReqEntity<JobDetailEntity> reqEntity) {
+    public RespEntity<Boolean> addJob(@RequestBody ReqEntity<JobDetailEntity> reqEntity) {
         logger.info("执行 QuartzJobController addJob ---> begin, param=" + reqEntity.toString());
         JobDetailEntity jobDetailEntity = reqEntity.getBusiInfo();
 
@@ -52,25 +52,25 @@ public class QuartzJobController {
         boolean result = quartzJobDetailService.addJob(jobDetailEntity);
         if(result) {
             logger.info("执行 QuartzJobController addJob ---> end");
-            return ResEntity.responseSuccess();
+            return RespEntity.responseSuccess();
         }
         logger.info("执行 QuartzJobController addJob ---> end");
-        return ResEntity.responseError();
+        return RespEntity.responseError();
     }
 
     /**
      * 查看定时任务列表
      */
     @GetMapping("/list")
-    public ResEntity<List<JobDetailEntity>> listJobs() {
+    public RespEntity<List<JobDetailEntity>> listJobs() {
         logger.info("执行 QuartzJobController listJobs ---> begin");
         List<JobDetailEntity> jobDetailEntityList = quartzJobDetailService.queryJobList();
         if(jobDetailEntityList != null) {
             logger.info("执行 QuartzJobController listJobs ---> end");
-            return new ResEntity(new ResPubInfo(ResCode.SUCCESS), null, jobDetailEntityList,null);
+            return new RespEntity(new RespPubInfo(ResCode.SUCCESS), null, jobDetailEntityList,null);
         }
         logger.info("执行 QuartzJobController listJobs ---> end");
-        return ResEntity.responseError();
+        return RespEntity.responseError();
     }
 
     /**

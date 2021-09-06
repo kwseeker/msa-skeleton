@@ -5,48 +5,48 @@ import top.kwseeker.common.constant.ResCode;
 import java.util.Date;
 import java.util.Map;
 
-public class ResEntity<T> {
+public class RespEntity<T> {
 
-    private ResPubInfo pubInfo;
+    private RespPubInfo pubInfo;
     private PageInfo pageInfo;
     private T busiInfo;
     private Map<String, Object> extRepParam;
 
-    public ResEntity() {}
+    public RespEntity() {}
 
-    public ResEntity(ResPubInfo resPubInfo) {
-        this.pubInfo = resPubInfo;
+    public RespEntity(RespPubInfo respPubInfo) {
+        this.pubInfo = respPubInfo;
     }
 
-    public ResEntity(ResPubInfo pubInfo, PageInfo pageInfo, T busiInfo, Map<String, Object> extRepParam) {
+    public RespEntity(RespPubInfo pubInfo, PageInfo pageInfo, T busiInfo, Map<String, Object> extRepParam) {
         this.pubInfo = pubInfo;
         this.pageInfo = pageInfo;
         this.busiInfo = busiInfo;
         this.extRepParam = extRepParam;
     }
 
-    public static <T> ResEntity<T> responseSuccess() {
+    public static <T> RespEntity<T> responseSuccess() {
         return responseCode(ResCode.SUCCESS);
     }
 
-    public static <T> ResEntity<T> responseError() {
+    public static <T> RespEntity<T> responseError() {
         return responseCode(ResCode.OTHER_ERROR);
     }
 
-    public static <T> ResEntity<T> responseCode(ResCode resCode) {
-        ResPubInfo resPubInfo = new ResPubInfo();
-        resPubInfo.setCode(resCode.getCode());
-        resPubInfo.setMessage(resCode.getMsg());
-        resPubInfo.setRspTime(new Date().toString());
-        return new ResEntity<>(resPubInfo);
+    public static <T> RespEntity<T> responseCode(ResCode resCode) {
+        RespPubInfo respPubInfo = new RespPubInfo();
+        respPubInfo.setCode(resCode.getCode());
+        respPubInfo.setMessage(resCode.getMsg());
+        respPubInfo.setRspTime(new Date().toString());
+        return new RespEntity<>(respPubInfo);
     }
 
 
-    public ResPubInfo getPubInfo() {
+    public RespPubInfo getPubInfo() {
         return pubInfo;
     }
 
-    public void setPubInfo(ResPubInfo pubInfo) {
+    public void setPubInfo(RespPubInfo pubInfo) {
         this.pubInfo = pubInfo;
     }
 

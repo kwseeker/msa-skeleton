@@ -5,15 +5,15 @@ import top.kwseeker.common.constant.ResCode;
 /**
  * 响应公共参数
  */
-public class ResPubInfo {
+public class RespPubInfo {
 
     private int code;
     private String message;
     private String rspTime;
 
-    public ResPubInfo() {}
+    public RespPubInfo() {}
 
-    public ResPubInfo(ResCode resCode) {
+    public RespPubInfo(ResCode resCode) {
         this.code = resCode.getCode();
         this.message = resCode.getMsg();
     }
