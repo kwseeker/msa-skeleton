@@ -1,5 +1,5 @@
 server:
-  port: 8020
+  port: 8001
   servlet:
     context-path: /order
 
@@ -12,7 +12,7 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        group: msa-service
+        #group: msa-service
         #cluster-name: SH
         #ephemeral: false
 

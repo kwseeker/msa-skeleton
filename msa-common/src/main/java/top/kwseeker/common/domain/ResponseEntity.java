@@ -22,7 +22,7 @@ public class ResponseEntity<T> implements Serializable {
     private T data;
 
     public ResponseEntity(ResultCode resultCode, T data) {
-        new ResponseEntity<>(resultCode.getCode(), resultCode.getMessage(), data);
+        this(resultCode.getCode(), resultCode.getMessage(), data);
     }
 
     public ResponseEntity(Integer code, String message, T data) {
