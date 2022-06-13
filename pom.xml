@@ -24,6 +24,7 @@
         <!--<module>msa-modapi</module>-->
         <module>msa-service</module>
         <module>msa-web-service</module>
+        <module>msa-middleware-analysis</module>
     </modules>
 
     <properties>
