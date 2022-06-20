@@ -25,6 +25,7 @@
         <module>msa-service</module>
         <module>msa-web-service</module>
         <module>msa-middleware-analysis</module>
+        <!--<module>msa-seata</module>-->
     </modules>
 
     <properties>
