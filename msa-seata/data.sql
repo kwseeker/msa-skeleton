@@ -8,6 +8,8 @@ CREATE TABLE seata_account.account_tbl (
   UNIQUE KEY user_id (user_id)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+INSERT INTO seata_account.account_tbl (id, user_id, money) VALUES ('1', '10001', '100');
+
 CREATE TABLE seata_account.undo_log (
   id bigint(20) NOT NULL AUTO_INCREMENT,
   branch_id bigint(20) NOT NULL,
@@ -31,6 +33,8 @@ CREATE TABLE seata_storage.storage_tbl (
   PRIMARY KEY (id),
   UNIQUE KEY commodity_code (commodity_code)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+INSERT INTO seata_storage.storage_tbl (id, commodity_code, count) VALUES ('1', '101', '5');
 
 CREATE TABLE seata_storage.undo_log (
   id bigint(20) NOT NULL AUTO_INCREMENT,
