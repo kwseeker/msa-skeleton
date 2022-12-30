@@ -1,0 +1,55 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: msa-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          # 默认false，true开启可以通过微服务创建路由，即可以通过微服务名访问服务
+          # 比如：http://<gateway-domain>.com/<serviceName>/<route-url>
+          enabled: false
+      # 是否开启网关
+      enabled: true
+      # 全局的cors
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTION
+      # 路由规则：路由id、路由到微服务的uri、断言
+      routes:
+        - id: echo_route                  # 路由ID，全局唯一，建议配合服务名
+          uri: http://localhost:8080      # 目标微服务的请求地址和端口
+          #uri: lb://echo                  # lb 整合负载均衡器ribbon,loadbalancer
+          predicates:
+            # Path路径匹配
+            - Path=/echo/**
+            # 匹配在指定的日期时间之后发生的请求，入参是ZonedDateTime类型
+            #- After=2021-05-16T20:50:57.511+08:00[Asia/Shanghai]
+            # Cookie匹配
+            #- Cookie=username, fox
+            # Header匹配  请求中带有请求头名为 x-request-id，其值与 \d+ 正则表达式匹配
+            #- Header=X-Request-Id, \d+
+            # 自定义CheckAuth断言工厂
+            #- name: CheckAuth
+            #  args:
+            #  name: fox
+            #- CheckAuth=monkey
+          # 过滤器工厂
+          filters:
+            - AddRequestHeader=X-Request-color, red # 添加请求头
+            - AddRequestParameter=color, blue       # 添加请求参数
+            #- PrefixPath=/echo                     # 添加前缀，对应微服务需要配置context-path
+            #- RedirectTo=302, http://baidu.com     # 重定向到百度
+            #- CheckAuth=fox,男                      # 配置自定义的过滤器工厂
