@@ -1,0 +1,72 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: mall-user  #微服务名称
+
+  #配置nacos注册中心地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+
+  #数据库配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/ms_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: 123456
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+
+
+#mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: top.kwseeker.msa.*.entity
+  global-config:
+    #数据库相关配置
+    db-config:
+      #主键类型  AUTO:"数据库ID自增"
+      id-type: AUTO
+      logic-delete-value: -1
+      logic-not-delete-value: 0
+      banner: false
+    #原生配置
+    configuration:
+      map-underscore-to-camel-case: true
+      cache-enabled: false
+      call-setters-on-nulls: true
+      jdbc-type-for-null: 'null'
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

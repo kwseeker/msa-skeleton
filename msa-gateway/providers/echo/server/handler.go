@@ -16,7 +16,7 @@ func helloHandler(w http.ResponseWriter, req *http.Request) {
 	log.Println("header:", req.Header)
 	log.Println("body:", req.Body)
 
-	_, err := w.Write([]byte("Hello " + req.URL.Path[len("/hello/"):]))
+	_, err := w.Write([]byte("Hello " + req.URL.Path[len("/echo/hello/"):]))
 	if err != nil {
 		log.Println(err)
 	}
@@ -78,7 +78,7 @@ func jsonHandler(w http.ResponseWriter, req *http.Request) {
 }
 
 func RegisterRoute() {
-	http.HandleFunc("/hello/", helloHandler)
-	http.HandleFunc("/slow/", slowRespHandler)
-	http.HandleFunc("/json/", jsonHandler)
+	http.HandleFunc("/echo/hello/", helloHandler)
+	http.HandleFunc("/echo/slow/", slowRespHandler)
+	http.HandleFunc("/echo/json/", jsonHandler)
 }

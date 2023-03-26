@@ -30,8 +30,8 @@ spring:
       # 路由规则：路由id、路由到微服务的uri、断言
       routes:
         - id: echo_route                  # 路由ID，全局唯一，建议配合服务名
-          uri: http://localhost:8080      # 目标微服务的请求地址和端口
-          #uri: lb://echo                  # lb 整合负载均衡器ribbon,loadbalancer
+#          uri: http://localhost:8080      # 被代理的微服务的请求地址和端口
+          uri: lb://srv-echo                  # lb 整合负载均衡器ribbon,loadbalancer
           predicates:
             # Path路径匹配
             - Path=/echo/**
@@ -53,3 +53,12 @@ spring:
             #- PrefixPath=/echo                     # 添加前缀，对应微服务需要配置context-path
             #- RedirectTo=302, http://baidu.com     # 重定向到百度
             #- CheckAuth=fox,男                      # 配置自定义的过滤器工厂
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: gateway

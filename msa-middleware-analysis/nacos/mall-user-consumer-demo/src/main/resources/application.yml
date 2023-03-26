@@ -1,0 +1,15 @@
+server:
+  port: 8045
+
+spring:
+  application:
+    name: mall-user-consumer-demo
+
+  #配置nacos注册中心地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        #namespace: 39e1e969-15f9-46d2-832d-fa052da55377
+        #group: mall-user
+        cluster-name: BJ
