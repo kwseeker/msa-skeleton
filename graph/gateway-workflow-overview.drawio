@@ -1,1 +1,78 @@
-<mxfile host="Electron" modified="2022-12-31T11:21:07.485Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/16.1.2 Chrome/96.0.4664.55 Electron/16.0.5 Safari/537.36" etag="KPi4h5ZvXVGEs63UHJX9" version="16.1.2" type="device" pages="2"><diagram id="9ECC-ABarEBT77yPrqBL" name="第 1 页">zZbLjpswFIafxstKYBICy1zIZNGRRqXqrB04A24NRh5z69PXDiaEYUJbadpkxfHv48v5/NsCOduseRCkSB95DAxhK26Qs0MY25bvqY9W2k5xPb8TEkFjkzQIIf0J/UijljSG11Gi5JxJWozFiOc5RHKkESF4PU574Wy8akESmAhhRNhUfaaxTDvVw6tBPwBN0n5l2zX1ZaRPNpW8piTm9YXkBMjZCs5lF2XNFpiG13Ppxu2v9J43JiCXfzKgCY9ple+e/C9f28OqTotv9Y9Pi26WirDSFBwWguaJ0raMl7H6PhAJNWlNEbLtyQhe5jHoyS3kbOqUSggLEuneWnlBaanMmGrZKiSMJrmKGbyozW4qEJIqyGsjS67zzV5UHzRXi7TP6JTngGcghdqbZQZgy9Bu37Tr4fCWvZZeHJzTi8QYJjnPPTBVgcH6F4idCeIJSoiV50yTC5nyhOeEBYO6GcMecj5zTe6E+DtI2ZoLRErJxwfQrakXmier9sVLEcFMQf01JCIBOZOH3z8pAYxIWo338eHU7Qn1s4+Vs6ku+rqh7d8b+gO8uhhb1cFTq9r4Hasu/pVT8QyzA8ljBgJhl+kLfNRRoqNHUhSnB+PGNO8P53KC80nwhoJ+VEMQFVUwJjhRsES+hbxAB94ebSwdbAK0VoqL/C3ydqeuNVrbN4e+wvcG3Z3x8DMcp8DPxr75a3BvKFcTlHvK5B2gWrr/D5VqDr9op76LH10n+AU=</diagram><diagram id="Ez1TyftaJfGHxwHzaOZi" name="第 2 页">nZPJboMwEIafhiMS4CjLNWS7dEVqml4qC0+xVYORMYXk6QtlzJIcqvaE+Wbz/DN2SJjWe01zfqcYSCfwWO2QjRMEvrdaNp+WnDsyX646kGjB0GkAkbiAjURaCgbFxNEoJY3IpzBWWQaxmTCqtaqmbh9KTqvmNIEbEMVU3tKjYIZ3dBksBn4AkXBb2Z9jfym1zthJwSlT1QiRrUNCrZTpTmkdgmzFs7pcPoPTS5rPnsvd5d5dJ8dNsnO7ZLu/hPQtaMjMv1M/FfT09v662M8f3OJEPPJ4IBjifVFZol57aqCi5waGUrT1ut7N2QqqVZkxaJP6DllXXBiIchq31qpZoYZxk0o0Y3rQBuqrefzSjN8r3KwmqBSMbi+FWWZ4cVxK386oGkbcMz4ar42juFVJn3lQrjmgePZ3mPGPbfRSyPYb</diagram></mxfile>
+<mxfile host="Electron" modified="2023-08-11T02:45:18.980Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="4HBIRTAoS7RY53mFf9kf" version="21.6.5" type="device" pages="2">
+  <diagram id="9ECC-ABarEBT77yPrqBL" name="第 1 页">
+    <mxGraphModel dx="1231" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xSbhvnDP9RTyH7whpVwk-4" value="Spring Cloud Gateway" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="200" y="1440" width="500" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="xSbhvnDP9RTyH7whpVwk-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xSbhvnDP9RTyH7whpVwk-1" target="xSbhvnDP9RTyH7whpVwk-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xSbhvnDP9RTyH7whpVwk-1" value="Gateway Client" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1560" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xSbhvnDP9RTyH7whpVwk-2" value="Gateway Handler&lt;br&gt;Mapping" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="1560" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xSbhvnDP9RTyH7whpVwk-5" value="Proxied Service&lt;br&gt;后台微服务" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="720" y="1560" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xSbhvnDP9RTyH7whpVwk-6" value="Gateway Web&lt;br&gt;Handler" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="1560" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xSbhvnDP9RTyH7whpVwk-7" value="Filter" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="1560" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5Pg-zcQFXHUufSQWG7cZ-1" value="&lt;p style=&quot;line-height: 1&quot;&gt;&lt;/p&gt;&lt;h1&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Spring-Cloud-Gateway 工作原理&lt;/font&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;(v2.0.0.M4)&amp;nbsp;&lt;br style=&quot;font-size: 10px&quot;&gt;&lt;/font&gt;&lt;/h1&gt;&lt;div style=&quot;font-size: 10px&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;其核心是一个WebFlux应用。&lt;/font&gt;&lt;/div&gt;&lt;p style=&quot;font-size: 10px&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;前提：&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;font-size: 10px&quot;&gt;&lt;/p&gt;&lt;ul style=&quot;font-size: 10px&quot;&gt;&lt;li style=&quot;font-size: 10px&quot;&gt;理解WebFlux工作原理与WebFlux应用开发&lt;/li&gt;&lt;li style=&quot;font-size: 10px&quot;&gt;Netty Reactor&lt;/li&gt;&lt;li style=&quot;font-size: 10px&quot;&gt;Spring Reactor&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;说明：&lt;br&gt;&lt;ul&gt;&lt;li&gt;如果对WebFlux工作原理（主要是请求处理流程）能有一个清晰的理解的话，再看Spring Cloud Gateway 的工作原理会很简单，代码也就仅仅5k多行&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style=&quot;font-size: 10px&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="10" y="20" width="710" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="v0geVxzHFCW3Ob6fWTqS-1" target="v0geVxzHFCW3Ob6fWTqS-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-1" value="spring-cloud-starter-gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="40" y="220" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="v0geVxzHFCW3Ob6fWTqS-3" target="v0geVxzHFCW3Ob6fWTqS-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="v0geVxzHFCW3Ob6fWTqS-3" target="v0geVxzHFCW3Ob6fWTqS-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="v0geVxzHFCW3Ob6fWTqS-3" target="v0geVxzHFCW3Ob6fWTqS-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-14" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;rounded=1;" parent="1" source="v0geVxzHFCW3Ob6fWTqS-3" target="v0geVxzHFCW3Ob6fWTqS-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-3" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;spring.factories&lt;br&gt;&lt;font color=&quot;#007fff&quot;&gt;初始化流程&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="220" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-5" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;GatewayClassPathWarningAutoConfiguration&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="220" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-7" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;GatewayAutoConfiguration&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="300" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-10" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;GatewayLoadBalancerClientAutoConfiguration&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="380" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v0geVxzHFCW3Ob6fWTqS-12" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;GatewayRedisAutoConfiguration&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="460" width="240" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Ez1TyftaJfGHxwHzaOZi" name="第 2 页">
+    <mxGraphModel dx="1231" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="zk2YVmp4RuFzN-BgWDgF-0" />
+        <mxCell id="zk2YVmp4RuFzN-BgWDgF-1" parent="zk2YVmp4RuFzN-BgWDgF-0" />
+        <mxCell id="QsaYZ_X7G6O-sY303PH3-0" value="Gateway Client" style="rounded=1;whiteSpace=wrap;html=1;" parent="zk2YVmp4RuFzN-BgWDgF-1" vertex="1">
+          <mxGeometry x="40" y="120" width="120" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
