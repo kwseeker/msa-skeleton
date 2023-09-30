@@ -1,3 +1,6 @@
+*.drawio.dtmp
+*.drawio.bkp
+
 /target/
 target/
 #!.mvn/wrapper/maven-wrapper.jar
