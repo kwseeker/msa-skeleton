@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-09-30T14:55:07.414Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.7.5 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="7J8ELAWLNRBnJY2Oz_Qb" version="21.7.5" type="device" pages="2">
+<mxfile host="Electron" modified="2023-10-10T07:22:38.778Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.7.5 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="mUAB39G6sE7wWsqWQQcL" version="21.7.5" type="device" pages="2">
   <diagram id="9ECC-ABarEBT77yPrqBL" name="gateway-3.1.8">
-    <mxGraphModel dx="2020" dy="843" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1781" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -37,11 +37,17 @@
         <mxCell id="v0geVxzHFCW3Ob6fWTqS-3" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;自动配置类&lt;br&gt;&lt;font color=&quot;#007fff&quot;&gt;位于spring-cloud-gateway-server config目录，开始不需要详细看，后面用到哪个Bean再来这些类中找&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="240" y="220" width="200" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-220" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="v0geVxzHFCW3Ob6fWTqS-5" target="TLQ8Jejc-yUDhLceZBrH-219">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="v0geVxzHFCW3Ob6fWTqS-5" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;GatewayAutoConfiguration&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="480" y="220" width="240" height="60" as="geometry" />
         </mxCell>
         <mxCell id="v0geVxzHFCW3Ob6fWTqS-7" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;GatewayNoLoadBalancerClientAutoConfiguration&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="480" y="300" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-241" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="v0geVxzHFCW3Ob6fWTqS-10" target="TLQ8Jejc-yUDhLceZBrH-240">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="v0geVxzHFCW3Ob6fWTqS-10" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;GatewayReactiveLoadBalancerClient&lt;br&gt;AutoConfiguration&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="480" y="380" width="240" height="60" as="geometry" />
@@ -203,13 +209,13 @@
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-44" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;font size=&quot;1&quot; color=&quot;#000000&quot;&gt;&lt;b&gt;DispatcherHandler&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;hr style=&quot;font-size: 10px;&quot; size=&quot;1&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;//一组“路由-&amp;gt;请求处理器”的容器 (案例中有7种)&lt;font color=&quot;#000000&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;private List&amp;lt;HandlerMapping&amp;gt; &lt;b&gt;handlerMappings&lt;/b&gt;;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;//一组请求处理适配器，分别适配不同的处理器类型&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;private List&amp;lt;HandlerAdapter&amp;gt; &lt;b&gt;handlerAdapters&lt;/b&gt;;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;//请求结果处理器&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;private List&amp;lt;HandlerResultHandler&amp;gt; &lt;b&gt;resultHandlers&lt;/b&gt;;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;/font&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fontColor=#007FFF;" vertex="1" parent="1">
           <mxGeometry x="-400" y="1000" width="360" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-45" value="&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;b&gt;RouteFunctionMapping&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;存储@Bean +&amp;nbsp;RouterFunction定义的路由与处理方法&lt;/font&gt;&lt;span style=&quot;color: rgb(0, 127, 255); background-color: initial;&quot;&gt;，通过 obtainApplicationContext()&lt;/span&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;.getBeanProvider(RouterFunction.class) 加载&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-45" value="&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;b&gt;RouteFunctionMapping&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;解析并存储@Bean +&amp;nbsp;RouterFunction定义的路由与处理方法&lt;/font&gt;&lt;span style=&quot;color: rgb(0, 127, 255); background-color: initial;&quot;&gt;，通过 obtainApplicationContext()&lt;/span&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;.getBeanProvider(RouterFunction.class) 加载&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="1760" y="1090" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-72" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-46" target="TLQ8Jejc-yUDhLceZBrH-71">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-46" value="&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;b&gt;RoutePredicateHandlerMapping&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;&lt;font size=&quot;1&quot;&gt;存储通过配置 spring.cloud.gateway.routes 和&amp;nbsp;&lt;/font&gt;&lt;font size=&quot;1&quot;&gt;RouteLocatorBuilder 定义的路由与处理方法&lt;/font&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-46" value="&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;b&gt;RoutePredicateHandlerMapping&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot; color=&quot;#007fff&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;解析并存储通过配置 spring.cloud.gateway.route和&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;RouteLocatorBuilder 定义的路由与处理方法&lt;/font&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="1760" y="1180" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-48" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;SCG中主要用到下面两种HandlerMapping&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
@@ -221,7 +227,7 @@
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-70" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-51" target="TLQ8Jejc-yUDhLceZBrH-69">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-51" value="&lt;div style=&quot;font-size: 9px;&quot;&gt;return lookupRoute(exchange)&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;遍历此HandlerMapping所有RouteLocator，返回与当前请求匹配的第一个Route (Mono&amp;lt;Route&amp;gt;)&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-51" value="&lt;div style=&quot;font-size: 9px;&quot;&gt;return &lt;b&gt;lookupRoute&lt;/b&gt;(exchange)&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;遍历此HandlerMapping所有RouteLocator，返回与当前请求匹配的第一个Route (Mono&amp;lt;Route&amp;gt;)&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="2240" y="1180" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-56" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=diamondThin;endFill=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-53" target="TLQ8Jejc-yUDhLceZBrH-44">
@@ -236,11 +242,8 @@
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-66" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-58" target="TLQ8Jejc-yUDhLceZBrH-65">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-79" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-58" target="TLQ8Jejc-yUDhLceZBrH-78">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-58" value="&lt;div style=&quot;&quot;&gt;&lt;font size=&quot;1&quot;&gt;retrun this.routeLocator.&lt;b&gt;getRoutes&lt;/b&gt;()&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot; size=&quot;1&quot;&gt;获取所有RouteLocator对象序列&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="2501" y="1180" width="200" height="60" as="geometry" />
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-58" value="&lt;div style=&quot;&quot;&gt;&lt;font size=&quot;1&quot;&gt;retrun this.routeLocator.&lt;b&gt;getRoutes&lt;/b&gt;()&lt;/font&gt;&lt;/div&gt;&lt;font size=&quot;1&quot; color=&quot;#007fff&quot;&gt;从RouteDefinitionLocator&lt;/font&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot; size=&quot;1&quot;&gt;获取所有RouteLocator对象序列&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="2501" y="1180" width="199" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-68" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-65" target="TLQ8Jejc-yUDhLceZBrH-67">
           <mxGeometry relative="1" as="geometry" />
@@ -284,9 +287,6 @@
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-74" value="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;.map(handler -&amp;gt; {&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#007fff&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp; &lt;font style=&quot;font-size: 10px;&quot;&gt;//CORS相关配置处理 || PreFlight 请求处理，暂略, TODO&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#007fff&quot;&gt;&amp;nbsp; ...&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp; return handler;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;});&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="2000" y="1260" width="200" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-78" value="&lt;div style=&quot;&quot;&gt;&lt;font size=&quot;1&quot;&gt;TODO Routes Predicate 哪里填充的&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="2740" y="1180" width="200" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-81" value="&lt;div style=&quot;font-size: 10px;&quot;&gt;WebSocketHandlerAdapter&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;用于适配WebSocketHandler子类型的处理器&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="2000" y="1400" width="200.75" height="60" as="geometry" />
         </mxCell>
@@ -312,8 +312,8 @@
             <mxPoint x="2200.75" y="1670" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-92" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;font size=&quot;1&quot; color=&quot;#000000&quot;&gt;&lt;b&gt;FilteringWebHandler&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;hr style=&quot;font-size: 10px;&quot; size=&quot;1&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;包含一组WebFilter和WebHandler的用于请求处理的责任链&lt;br&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;br&gt;&lt;font color=&quot;#000000&quot;&gt;private final DefaultWebFilterChain chain;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;br&gt;//继承WebHandlerDecorator&lt;br&gt;&lt;span style=&quot;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;private final WebHandler delegate;&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fontColor=#007FFF;" vertex="1" parent="1">
-          <mxGeometry x="-800" y="1340" width="280" height="160" as="geometry" />
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-92" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;font size=&quot;1&quot; color=&quot;#000000&quot;&gt;&lt;b&gt;FilteringWebHandler&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;hr style=&quot;font-size: 10px;&quot; size=&quot;1&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;//全局过滤器列表&lt;br&gt;&lt;font color=&quot;#000000&quot;&gt;private final List&amp;lt;GatewayFilter&amp;gt; globalFilters;&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fontColor=#007FFF;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="1340" width="280" height="80" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-95" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;b&gt;Route&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;hr style=&quot;font-size: 10px;&quot; size=&quot;1&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;路由规则对象&lt;/div&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;//&lt;/span&gt;路由ID&lt;/div&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;private final String id;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;//路由转发目标URI&lt;/div&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;private final URI uri;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;//匹配优先级，&lt;/div&gt;&lt;div style=&quot;&quot;&gt;//一个请求可能匹配多个路由规则，选择优先级最高的&lt;/div&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;private final int order;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;//断言，用于匹配请求&lt;/div&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;private final AsyncPredicate&amp;lt;ServerWebExchange&amp;gt; predicate;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;//局部过滤器&lt;/div&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;private final List&amp;lt;GatewayFilter&amp;gt; gatewayFilters;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;//元数据，TODO&lt;/div&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;private final Map&amp;lt;String, Object&amp;gt; metadata;&lt;/div&gt;&lt;/div&gt;&lt;/span&gt;&lt;/font&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fontColor=#007FFF;" vertex="1" parent="1">
           <mxGeometry x="-320" y="1540" width="280" height="220" as="geometry" />
@@ -327,7 +327,7 @@
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-109" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-97" target="TLQ8Jejc-yUDhLceZBrH-108">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-97" value="&lt;div style=&quot;&quot;&gt;Mono&amp;lt;Void&amp;gt; mono = &lt;b&gt;webHandler&lt;/b&gt;.handle(exchange);&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;FilteringWebHandler&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-97" value="&lt;div style=&quot;&quot;&gt;Mono&amp;lt;Void&amp;gt; mono = &lt;b&gt;webHandler&lt;/b&gt;.handle(exchange);&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;&lt;b&gt;FilteringWebHandler&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="2240" y="1640" width="200.75" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-102" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-99" target="TLQ8Jejc-yUDhLceZBrH-81">
@@ -363,7 +363,7 @@
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-116" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-113" target="TLQ8Jejc-yUDhLceZBrH-115">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-113" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;font-size: 8px;&quot;&gt;List&amp;lt;GatewayFilter&amp;gt; combined = new ArrayList&amp;lt;&amp;gt;(this.globalFilters);&lt;/div&gt;&lt;div style=&quot;font-size: 8px;&quot;&gt;combined.addAll(gatewayFilters);&lt;/div&gt;&lt;div style=&quot;font-size: 8px;&quot;&gt;AnnotationAwareOrderComparator.sort(combined);&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#007fff&quot;&gt;合并全局过滤器和局部过滤器并排序，值越小优先级越高&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-113" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;font-size: 8px;&quot;&gt;List&amp;lt;GatewayFilter&amp;gt; combined = new ArrayList&amp;lt;&amp;gt;(this.globalFilters);&lt;/div&gt;&lt;div style=&quot;font-size: 8px;&quot;&gt;combined.addAll(gatewayFilters);&lt;/div&gt;&lt;div style=&quot;font-size: 8px;&quot;&gt;AnnotationAwareOrderComparator.sort(combined);&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#007fff&quot;&gt;&lt;b&gt;合并全局过滤器和局部过滤器并排序&lt;/b&gt;，值越小优先级越高&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="2481" y="1800" width="200.75" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-120" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-115" target="TLQ8Jejc-yUDhLceZBrH-119">
@@ -380,43 +380,16 @@
             <mxPoint x="2950" y="1690" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-136" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-119" target="TLQ8Jejc-yUDhLceZBrH-123">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-137" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-119" target="TLQ8Jejc-yUDhLceZBrH-125">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-146" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-119" target="TLQ8Jejc-yUDhLceZBrH-126">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-154" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-119" target="TLQ8Jejc-yUDhLceZBrH-127">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-155" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-119" target="TLQ8Jejc-yUDhLceZBrH-128">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-156" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-119" target="TLQ8Jejc-yUDhLceZBrH-129">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-157" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-119" target="TLQ8Jejc-yUDhLceZBrH-130">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-158" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-119" target="TLQ8Jejc-yUDhLceZBrH-132">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-159" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-119" target="TLQ8Jejc-yUDhLceZBrH-131">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-119" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;return this.delegate.filter(exchange, chain);&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;这里省略了一步责任链遍历执行Filter（实际是&lt;/font&gt;&lt;font color=&quot;#007fff&quot;&gt;GatewayFilterAdapter对象&lt;/font&gt;&lt;span style=&quot;color: rgb(0, 127, 255); background-color: initial;&quot;&gt;）的过程&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="2721" y="1880" width="199" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-191" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-121" target="TLQ8Jejc-yUDhLceZBrH-123">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-191" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-121" target="TLQ8Jejc-yUDhLceZBrH-123">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-121" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;RemoveCachedBodyFilter&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;doFinally()阶段，用于&lt;b&gt;处理返回&lt;/b&gt;后释放属性&amp;nbsp;&lt;/font&gt;&lt;font color=&quot;#007fff&quot;&gt;CACHED_REQUEST_BODY_ATTR值&lt;/font&gt;&lt;b style=&quot;background-color: initial; color: rgb(0, 127, 255);&quot;&gt;PooledDataBuffer &lt;/b&gt;&lt;span style=&quot;background-color: initial; color: rgb(0, 127, 255);&quot;&gt;（反而是最后执行）&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;最高优先级，Integer.MIN_VALUE&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="2960" y="1640" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-192" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-123" target="TLQ8Jejc-yUDhLceZBrH-125">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-192" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-123" target="TLQ8Jejc-yUDhLceZBrH-125">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-123" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;AdaptCachedBodyGlobalFilter&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
@@ -425,7 +398,7 @@
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-139" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-125" target="TLQ8Jejc-yUDhLceZBrH-138">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-193" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-125" target="TLQ8Jejc-yUDhLceZBrH-126">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-193" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-125" target="TLQ8Jejc-yUDhLceZBrH-126">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-125" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;NettyWriteResponseFilter&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;then()阶段，即用于处理&lt;b&gt;返回后&lt;/b&gt;写Response响应&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
@@ -434,59 +407,61 @@
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-148" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-126" target="TLQ8Jejc-yUDhLceZBrH-147">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-194" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-126" target="TLQ8Jejc-yUDhLceZBrH-127">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-194" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-126" target="TLQ8Jejc-yUDhLceZBrH-127">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-126" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;ForwardPathFilter&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;如果schema是forward类型执行右边逻辑，&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;否则直接跳过执行下一个过滤器&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="2960" y="2120" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-172" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-127" target="TLQ8Jejc-yUDhLceZBrH-171">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-172" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-127" target="TLQ8Jejc-yUDhLceZBrH-171">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-195" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-127" target="TLQ8Jejc-yUDhLceZBrH-128">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-195" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-127" target="TLQ8Jejc-yUDhLceZBrH-128">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-127" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;GatewayMetricsFilter&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;doOnSuccess()&amp;nbsp;&lt;/font&gt;&lt;font color=&quot;#007fff&quot;&gt;doOnError()&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(0, 127, 255); background-color: initial;&quot;&gt;阶段&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;即用于处理返回后记录监控数据&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="2960" y="2280" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-174" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-128" target="TLQ8Jejc-yUDhLceZBrH-173">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-174" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-128" target="TLQ8Jejc-yUDhLceZBrH-173">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-196" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-128" target="TLQ8Jejc-yUDhLceZBrH-129">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-236" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-128" target="TLQ8Jejc-yUDhLceZBrH-235">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3060" y="2560" />
+              <mxPoint x="2880" y="2560" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-128" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;RouteToRequestUrlFilter&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;用于生成最终转发给目标服务的完整的URL&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
           <mxGeometry x="2960" y="2358" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-197" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-129" target="TLQ8Jejc-yUDhLceZBrH-130">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-129" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;NoLoadBalancerClientFilter&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;默认没有配置负载均衡时使用&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;order: 10150&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2960.38" y="2600" width="200.75" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-181" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-130" target="TLQ8Jejc-yUDhLceZBrH-180">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-129" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;NoLoadBalancerClientFilter&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;默认没有配置负载均衡时使用&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="2960" y="2600" width="200.75" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-181" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-130" target="TLQ8Jejc-yUDhLceZBrH-180">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-198" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-130" target="TLQ8Jejc-yUDhLceZBrH-132">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-198" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-130" target="TLQ8Jejc-yUDhLceZBrH-132">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-130" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;WebsocketRoutingFilter&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;用于处理WebSocket&lt;/font&gt;&lt;font color=&quot;#007fff&quot;&gt;请求&lt;/font&gt;&lt;span style=&quot;color: rgb(0, 127, 255); background-color: initial;&quot;&gt;或者Http升级为WebSokcet, 对于WebSocket请求这个是最后的过滤器&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="2960" y="2680" width="200.75" height="60" as="geometry" />
+          <mxGeometry x="2960" y="2800" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-166" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-131" target="TLQ8Jejc-yUDhLceZBrH-165">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-166" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-131" target="TLQ8Jejc-yUDhLceZBrH-165">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-131" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;ForwardRoutingFilter&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;用于处理schema为&lt;b&gt;forward&lt;/b&gt;的请求&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="2960" y="3200" width="200.75" height="60" as="geometry" />
+          <mxGeometry x="2960" y="3320" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-199" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-132" target="TLQ8Jejc-yUDhLceZBrH-131">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-199" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-132" target="TLQ8Jejc-yUDhLceZBrH-131">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-201" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-132" target="TLQ8Jejc-yUDhLceZBrH-200">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-201" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-132" target="TLQ8Jejc-yUDhLceZBrH-200">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-132" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;NettyRoutingFilter&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;对于要转发给后端服务的Http请求，这个是最后的过滤器，借助reactor-netty HttpClient 向后端服务发起请求&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="2960" y="2760" width="200.75" height="60" as="geometry" />
+          <mxGeometry x="2960" y="2880" width="200.75" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-141" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-138" target="TLQ8Jejc-yUDhLceZBrH-140">
           <mxGeometry relative="1" as="geometry" />
@@ -522,88 +497,179 @@
           <mxGeometry x="3180.75" y="2520" width="239.25" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-165" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;return handle(this.getDispatcherHandler(), exchange);&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="3200" y="3200" width="200.75" height="60" as="geometry" />
+          <mxGeometry x="3200" y="3320" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-167" value="&lt;font color=&quot;#007fff&quot;&gt;下面过滤器按优先级从高到低排序&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2960.75" y="1605" width="200" height="30" as="geometry" />
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-167" value="&lt;font color=&quot;#007fff&quot;&gt;全局过滤器+局部过滤器&lt;br&gt;下面过滤器按优先级从高到低排序&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="2960.75" y="1600" width="200" height="40" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-168" value="&lt;font color=&quot;#007fff&quot;&gt;这里可以看到SCG网关转发请求&lt;br&gt;其实就是重新发起请求&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2760" y="2800" width="190" height="40" as="geometry" />
+          <mxGeometry x="2860" y="2950" width="190" height="40" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-171" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;TODO&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;监控原理&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="3200" y="2280" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-178" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-173" target="TLQ8Jejc-yUDhLceZBrH-177">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-178" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-173" target="TLQ8Jejc-yUDhLceZBrH-177">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-173" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;Route route = exchange.getAttribute(&lt;/div&gt;&lt;div style=&quot;&quot;&gt;GATEWAY_ROUTE_ATTR);&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;即获取前面与预言匹配的Route对象&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="3200" y="2358" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-179" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-177" target="TLQ8Jejc-yUDhLceZBrH-160">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-179" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-177" target="TLQ8Jejc-yUDhLceZBrH-160">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-177" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div&gt;URI &lt;b&gt;uri&lt;/b&gt; = exchange.getRequest().getURI();&lt;/div&gt;&lt;div&gt;boolean encoded = containsEncodedParts(uri);&lt;/div&gt;&lt;div&gt;URI &lt;b&gt;routeUri&lt;/b&gt; = route.getUri();&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="3200" y="2440" width="200.75" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-180" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div&gt;return this.&lt;b&gt;webSocketService&lt;/b&gt;.handleRequest(&lt;/div&gt;&lt;div&gt;exchange,&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;new ProxyWebSocketHandler(&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;requestUrl,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;this.webSocketClient, filtered, protocols));&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="3200" y="2680" width="200.75" height="60" as="geometry" />
+          <mxGeometry x="3200" y="2800" width="200.75" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-182" value="&lt;font color=&quot;#007fff&quot;&gt;TODO&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="3400.75" y="2695" width="60" height="30" as="geometry" />
+          <mxGeometry x="3400.75" y="2815" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-183" value="schema: ws wss" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2795" y="2695" width="110" height="30" as="geometry" />
+          <mxGeometry x="2840" y="2815" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-184" value="schema: forward" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2795" y="3215" width="110" height="30" as="geometry" />
+          <mxGeometry x="2840" y="3335" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-185" value="schema: http https" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2790" y="2770" width="120" height="30" as="geometry" />
+          <mxGeometry x="2830" y="2890" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-186" value="负载均衡" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2815" y="2615" width="70" height="30" as="geometry" />
+          <mxGeometry x="2770" y="2655" width="70" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-187" value="URL转换" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2815" y="2373" width="70" height="30" as="geometry" />
+          <mxGeometry x="2880" y="2373" width="70" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-188" value="监控" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2825" y="2295" width="50" height="30" as="geometry" />
+          <mxGeometry x="2900" y="2295" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-189" value="后端服务响应返回" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2795" y="1815" width="120" height="30" as="geometry" />
+          <mxGeometry x="2830" y="1815" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-190" value="资源释放" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2820" y="1648" width="70" height="30" as="geometry" />
+          <mxGeometry x="2880" y="1655" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-203" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-200" target="TLQ8Jejc-yUDhLceZBrH-202">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-203" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-200" target="TLQ8Jejc-yUDhLceZBrH-202">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-200" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;URI requestUrl = exchange.getRequiredAttribute(&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;GATEWAY_REQUEST_URL_ATTR&lt;/b&gt;);&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;即前面 RouteToRequestUrlFilter 组装的完整URL&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="3200" y="2760" width="200.75" height="60" as="geometry" />
+          <mxGeometry x="3200" y="2880" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-205" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-202" target="TLQ8Jejc-yUDhLceZBrH-204">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-205" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-202" target="TLQ8Jejc-yUDhLceZBrH-204">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-202" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;HttpHeaders filtered =&amp;nbsp;&lt;b&gt;filterRequest&lt;/b&gt;(&lt;/div&gt;&lt;div style=&quot;&quot;&gt;getHeadersFilters(), exchange);&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;filtered.forEach(httpHeaders::set);&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;依次执行HttpHeadersFilter提取请求头信息&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="3200" y="2840" width="200.75" height="60" as="geometry" />
+          <mxGeometry x="3200" y="2960" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-207" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-204" target="TLQ8Jejc-yUDhLceZBrH-206">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-207" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-204" target="TLQ8Jejc-yUDhLceZBrH-206">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-204" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;Route route = exchange.getAttribute(&lt;br&gt;GATEWAY_ROUTE_ATTR);&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;获取前面匹配的Route&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="3200" y="2920" width="200.75" height="60" as="geometry" />
+          <mxGeometry x="3200" y="3040" width="200.75" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TLQ8Jejc-yUDhLceZBrH-210" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-206" target="TLQ8Jejc-yUDhLceZBrH-209">
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-210" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-206" target="TLQ8Jejc-yUDhLceZBrH-209">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-206" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;Flux&amp;lt;HttpClientResponse&amp;gt; responseFlux = &lt;b&gt;getHttpClient&lt;/b&gt;(route, exchange)&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;.headers(...).request(method).uri(uri)&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;.&lt;b&gt;send&lt;/b&gt;(...)&lt;/div&gt;&lt;div style=&quot;&quot;&gt;.&lt;b&gt;responseConnection&lt;/b&gt;(...)&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;即通过reactor-netty向后台服务发送Http请求&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;这里的流程有必要在Markdown中详细讲解&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="3200" y="3000" width="200.75" height="100" as="geometry" />
+          <mxGeometry x="3200" y="3120" width="200.75" height="100" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-209" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;return responseFlux.then(chain.filter(exchange));&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="3200" y="3120" width="200.75" height="60" as="geometry" />
+          <mxGeometry x="3200" y="3240" width="200.75" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TLQ8Jejc-yUDhLceZBrH-211" value="&lt;font color=&quot;#007fff&quot;&gt;TODO 主流程代码提取出来&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="3400.75" y="3035" width="170" height="30" as="geometry" />
+          <mxGeometry x="3400.75" y="3155" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-215" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-212" target="TLQ8Jejc-yUDhLceZBrH-214">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-228" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-212" target="TLQ8Jejc-yUDhLceZBrH-58">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2210" y="1110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-212" value="&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div&gt;@Bean&lt;/div&gt;&lt;div&gt;RouteLocator&lt;br&gt;&lt;/div&gt;&lt;div&gt;new &lt;b&gt;RouteDefinitionRouteLocator&lt;/b&gt;(&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;routeDefinitionLocator, predicates,&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;gatewayFilters, properties, configurationService);&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=9;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1040.75" y="460" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-243" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-214" target="TLQ8Jejc-yUDhLceZBrH-242">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-214" value="&lt;div style=&quot;font-size: 8px;&quot;&gt;&lt;div&gt;@Bean&lt;/div&gt;&lt;div&gt;RoutePredicateHandlerMapping&lt;/div&gt;&lt;div&gt;new &lt;b&gt;RoutePredicateHandlerMapping&lt;/b&gt;(webHandler, &lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;b&gt;routeLocator&lt;/b&gt;,&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;globalCorsProperties, environment);&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1040.75" y="540" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-218" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-216" target="TLQ8Jejc-yUDhLceZBrH-212">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-216" value="&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;@Bean @Primary&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;RouteDefinitionLocator&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;new &lt;b&gt;CompositeRouteDefinitionLocator&lt;/b&gt;(&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;Flux.fromIterable(&lt;b&gt;routeDefinitionLocators&lt;/b&gt;));&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1040.75" y="380" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-223" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-219" target="TLQ8Jejc-yUDhLceZBrH-222">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-219" value="&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;@Bean&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;@ConditionalOnMissingBean&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;PropertiesRouteDefinitionLocator&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;new &lt;b&gt;PropertiesRouteDefinitionLocator&lt;/b&gt;(properties);&lt;/font&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;配置文件（以spring.cloud.gateway开头）中定义的Route规则&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1040.75" y="220" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-225" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-222" target="TLQ8Jejc-yUDhLceZBrH-216">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1161.15" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-222" value="&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;@Bean&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;@ConditionalOnMissingBean(&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;RouteDefinitionRepository.class)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;InMemoryRouteDefinitionRepository&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;new&amp;nbsp;&lt;b&gt;InMemoryRouteDefinitionRepository&lt;/b&gt;();&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1040.75" y="300" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-229" value="&lt;div style=&quot;text-align: center; font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#000000&quot;&gt;&lt;b style=&quot;&quot;&gt;GatewayProperties&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;hr style=&quot;font-size: 10px;&quot; size=&quot;1&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;//路由规则定义&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;private List&amp;lt;RouteDefinition&amp;gt; &lt;b&gt;routes&lt;/b&gt; = new ArrayList&amp;lt;&amp;gt;();&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;private List&amp;lt;FilterDefinition&amp;gt; &lt;b&gt;defaultFilters&lt;/b&gt; = new ArrayList&amp;lt;&amp;gt;();&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;private List&amp;lt;MediaType&amp;gt; &lt;b&gt;streamingMediaTypes&lt;/b&gt; = Arrays.asList(&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp; &amp;nbsp; MediaType.TEXT_EVENT_STREAM,&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;&amp;nbsp; &amp;nbsp; MediaType.APPLICATION_STREAM_JSON,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;&amp;nbsp; &amp;nbsp; new MediaType(&quot;application&quot;, &quot;grpc&quot;),&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;new MediaType(&quot;application&quot;, &quot;grpc+protobuf&quot;),&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp; &amp;nbsp; new MediaType(&quot;application&quot;, &quot;grpc+json&quot;));&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;private boolean failOnRouteDefinitionError = true;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/span&gt;&lt;/font&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fontColor=#007FFF;" vertex="1" parent="1">
+          <mxGeometry x="-400" y="220" width="360" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-230" value="&lt;font color=&quot;#007fff&quot; style=&quot;font-size: 10px;&quot;&gt;注意这里将全局过滤器&lt;br&gt;和局部过滤器合并了&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="2360" y="1810" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-231" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;ReactiveLoadBalancerClientFilter&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;引入spring-cloud-starter-loadbalancer时加载&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#007fff&quot;&gt;order: 10150&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=center;arcSize=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2959.63" y="2680" width="200.75" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-237" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-235" target="TLQ8Jejc-yUDhLceZBrH-130">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2880" y="2770" />
+              <mxPoint x="3060" y="2770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-238" value="N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.959;exitY=0.495;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-235" target="TLQ8Jejc-yUDhLceZBrH-129">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2939.63" y="2670" />
+              <mxPoint x="2939.63" y="2630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-239" value="Y" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.959;exitY=0.501;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-235" target="TLQ8Jejc-yUDhLceZBrH-231">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2939.63" y="2670" />
+              <mxPoint x="2939.63" y="2710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-235" value="schema &lt;br&gt;是否为&lt;br&gt;lb" style="rhombus;whiteSpace=wrap;html=1;fontSize=10;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="2840.005" y="2630" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-240" value="@Bean ReactiveLoadBalancerClientFilter" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="380" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-246" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="TLQ8Jejc-yUDhLceZBrH-242" target="TLQ8Jejc-yUDhLceZBrH-245">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-242" value="&lt;div style=&quot;font-size: 8px;&quot;&gt;&lt;div style=&quot;&quot;&gt;@Bean&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;@ConditionalOnEnabledGlobalFilter&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;public &lt;b&gt;RouteToRequestUrlFilter&lt;/b&gt; routeToRequestUrlFilter() {&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;return new &lt;b&gt;RouteToRequestUrlFilter&lt;/b&gt;();&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="620" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-244" value="FilteringWebHanlder" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="2516.37" y="1610" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-245" value="&lt;div style=&quot;font-size: 8px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;div&gt;@Bean&lt;/div&gt;&lt;div&gt;public &lt;b&gt;FilteringWebHandler&lt;/b&gt; filteringWebHandler(&lt;/div&gt;&lt;div&gt;List&amp;lt;GlobalFilter&amp;gt; globalFilters) {&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;return new FilteringWebHandler(globalFilters);&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="700" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TLQ8Jejc-yUDhLceZBrH-247" value="后面只列举较重要的Bean" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="520.5" y="190" width="160" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
